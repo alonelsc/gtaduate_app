@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"新的更改");
+   
     //  暂时指定用户信息
     NSString *username = @"demo1@demo.com";
     NSString *password = @"demodemo";
