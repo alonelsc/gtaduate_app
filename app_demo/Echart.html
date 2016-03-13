@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+            
+            <title>ECharts</title>
+            
+            
+            </head>
+    
+    
+    <body>
+        <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+        <div id="main" style="width: 500px;height:350px;"></div>
+        
+        <script src="/Users/lsc/Desktop/app_demo-app_first_branch/app_demo/echarts-master/dist/echarts.min.js"></script>
+        <script src="/Users/lsc/Desktop/app_demo-app_first_branch/app_demo/echarts-master/test/lib/jquery.min.js"></script>
+        
+        
+        
+        <script type="text/javascript" >
+            
+            
+            function setdata(dataobject)
+            {
+                var myChart = echarts.init(document.getElementById('main'));
+                
+                
+                // 指定图表的配置项和数据
+                var option = {
+                    title: {
+                        text: 'ECharts 入门示例'
+                        
+                    },
+                    tooltip: {
+                        trigger: 'axis'
+                    },
+                    legend: {
+                        data:['in人数','out人数']
+                    },
+                    xAxis: {
+                        type : 'category',
+                        data:[]
+                    },
+                    
+                    yAxis: {
+                        show: true,
+                        type: 'value',
+                        splitArea: {show: true}
+                        
+                        
+                    },
+                    series: [{
+                             name: 'in人数',
+                             type: 'bar',
+                             data: []
+                             },
+                             {
+                             name: 'out人数',
+                             type: 'bar',
+                             data: []
+                             }
+                             ]
+                };
+                
+                
+                
+                // 为echarts对象加载数据
+                myChart.setOption(option);
+                
+                
+                $.ajax
+                ({
+                 type:"post",
+                 async:true,
+                 dataType:"json",
+                 url:"https://api.xitech.cn/oauth/1/1001",
+                 
+                 
+                 /*"time":"2016-01-09",
+                  "store_id":"9B7BFBD7-094E-4F3E-D66D-EF8345097D4F",
+                  "access_token":"wOe6I9rLlEXPFGZxoeE8qbFvQsSib6qSpuOXuDAh",
+                  */
+                 
+                 
+                 data:{
+                 "time":dataobject.time,
+                 "store_id":dataobject.store_id,
+                 "access_token":dataobject.access_token},
+                 
+                 
+                 success:function(da)
+                 {
+                 //alert("获取成功"+da[0].time);
+                 
+                 
+                 myChart.setOption(
+                                   {
+                                   xAxis:
+                                   {
+                                   data:[da[0].time,da[1].time,da[2].time,da[3].time,da[4].time,da[5].time,da[6].time]
+                                   },
+                                   series:
+                                   [ {
+                                    name:'in人数',
+                                    type:'bar',
+                                    data:[da[0].in,da[1].in,da[2].in,da[3].in,da[4].in,da[5].in,da[6].in]
+                                    },
+                                    {
+                                    name:'out人数',
+                                    type:'bar',
+                                    data:[da[0].out,da[1].out,da[2].out,da[3].out,da[4].out,da[5].out,da[6].out]
+                                    }]
+                                   
+                                   })
+                 
+                 
+                 },
+                 error:function()
+                 {
+                 alert("异常！");
+                 }
+                 });
+                 
+                 
+            };
+        
+        
+        function secondfunc(cmd,parames){
+            
+             window.location= "textapp:"+cmd+":"+parames ;
+        };
+        
+        
+        
+        
+        
+            </script>
+        <button onclick= "secondfunc('alert','aa年后')" >dian ji wo</button>
+        
+    </body>
+    
+</html>
