@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <AFNetworking.h>
+//#import <AFNetworking.h>
 
 @interface checkOutResult : UIViewController<UIWebViewDelegate>
-@property (strong, nonatomic) IBOutlet UIWebView *webview;
+//@property (strong, nonatomic) IBOutlet UIWebView *webview;
 
 @end

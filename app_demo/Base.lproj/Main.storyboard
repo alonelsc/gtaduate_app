@@ -61,11 +61,44 @@
                                     <segment title="月客流"/>
                                 </segments>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8888" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krZ-ni-yhV">
+                                <rect key="frame" x="160" y="140" width="100" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="9HI-5N-Bol"/>
+                                    <constraint firstAttribute="height" constant="50" id="Kx6-RE-Mch"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RVL-mx-57h">
+                                <rect key="frame" x="122" y="246" width="500" height="0.0"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                            <webView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UB4-8L-PPA">
+                                <rect key="frame" x="50" y="265" width="500" height="350"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S46-O5-hNB">
+                                <rect key="frame" x="160" y="200" width="100" height="20.5"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.99000004320000001" green="1" blue="0.99760311130000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="S46-O5-hNB" firstAttribute="leading" secondItem="2pg-ol-fyu" secondAttribute="leadingMargin" constant="140" id="30A-kc-eaA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="CaL-l9-ePw" secondAttribute="trailing" constant="56" id="4uY-gt-hGe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UB4-8L-PPA" secondAttribute="trailing" constant="30" id="9Zp-vi-q01"/>
+                            <constraint firstItem="S46-O5-hNB" firstAttribute="top" secondItem="krZ-ni-yhV" secondAttribute="bottom" constant="10" id="FPY-HU-B7R"/>
+                            <constraint firstItem="UB4-8L-PPA" firstAttribute="leading" secondItem="2pg-ol-fyu" secondAttribute="leadingMargin" constant="30" id="KWh-UJ-krD"/>
+                            <constraint firstItem="krZ-ni-yhV" firstAttribute="top" secondItem="CaL-l9-ePw" secondAttribute="bottom" constant="26" id="NR7-Br-IvK"/>
+                            <constraint firstItem="krZ-ni-yhV" firstAttribute="trailing" secondItem="S46-O5-hNB" secondAttribute="trailing" id="iLZ-Jb-arh"/>
                             <constraint firstItem="CaL-l9-ePw" firstAttribute="leading" secondItem="2pg-ol-fyu" secondAttribute="leadingMargin" constant="56" id="mXe-md-YBT"/>
+                            <constraint firstItem="krZ-ni-yhV" firstAttribute="leading" secondItem="2pg-ol-fyu" secondAttribute="leadingMargin" constant="140" id="nPI-Wi-c52"/>
                             <constraint firstItem="CaL-l9-ePw" firstAttribute="top" secondItem="ahZ-1T-Nvs" secondAttribute="bottom" constant="22" id="oRT-Ix-IiI"/>
                         </constraints>
                     </view>
@@ -77,7 +110,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="_segemenlable" destination="S46-O5-hNB" id="hvp-Bk-Nh3"/>
                         <outlet property="segment" destination="CaL-l9-ePw" id="ckR-Ry-lpN"/>
+                        <outlet property="webview" destination="UB4-8L-PPA" id="Mjw-mh-fhs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ikn-M8-jIn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -371,9 +406,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="查询结果" id="lbt-7e-QDd"/>
-                    <connections>
-                        <outlet property="webview" destination="bnU-KD-BpO" id="CWD-Xh-bQf"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V2I-r6-k1Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

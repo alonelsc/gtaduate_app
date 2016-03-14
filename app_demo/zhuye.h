@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AFNetworking.h>
 
-@interface zhuye : UIViewController
+@interface zhuye : UIViewController<UIWebViewDelegate>
 @property (strong, nonatomic) IBOutlet UILabel *_peoplelable;
 @property (strong, nonatomic) IBOutlet UILabel *_segemenlable;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segment;
 @property int i;
+
+@property (strong, nonatomic) IBOutlet UIWebView *webview;
 @end
