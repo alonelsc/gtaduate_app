@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    NSLog(@"nihao");
     
 //    self._peoplelable = [[UILabel alloc]initWithFrame:CGRectMake( 160, 140, 100, 50)
 //                      ];
